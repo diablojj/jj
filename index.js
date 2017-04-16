@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true,limit:'10mb'}));
 app.use(bodyParser.json({limit:'10mb'}));
 
 // 静态委托目录
-console.log(__dirname);
+//console.log(__dirname);
 app.use('/files', express.static(path.join(__dirname, 'files/')));
 
 server.listen(80);
@@ -52,7 +52,9 @@ app.use('/setwish', function(req,res,next) {
 app.get('/getwish', function(req,res,next) {
 
     var curDate = new Date().toISOString();
-    console.log('getwish time = ' + curDate + " ip = " + getClientIp(req) + " agent = " + req.headers["user-agent"]);
+    console.log('getwish time = ' + curDate);
+    console.log('getwish ip = ' + getClientIp(req));
+    console.log('getwish agent = ' + req.headers["user-agent"]);
 
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");

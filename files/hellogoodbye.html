@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>这是一只猫</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <script src="./zepto.js"></script>
+
+    <style>
+        #songCT {
+            position: fixed;
+            top: 10px;
+            width: 100%;
+            display: block;
+        }
+        #zjlsong {
+            margin-left: calc(50% - 150px);
+        }
+
+        html,body{
+            height: 100%;
+            font-size: 14px;
+        }
+        body {
+            background-image: url(1.jpeg);
+            width: 100%;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size: 100% auto;
+            margin: 0px;
+            font: Helvetica;
+        }
+
+        button {
+            display: inline-block;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font: 14px/100% Arial, Helvetica, sans-serif;
+            padding: .5em 2em .55em;
+            text-shadow: 0 1px 1px rgba(0,0,0,.3);
+            -webkit-border-radius: .5em;
+            -moz-border-radius: .5em;
+            border-radius: .5em;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        }
+        button:hover {
+            text-decoration: none;
+        }
+        button:active {
+            position: relative;
+            top: 1px;
+        }
+
+        #firstCT, #yesCT, #noCT {
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            font-size: 30px;
+        }
+
+        .innerCT {
+            margin: 0 auto;
+            width: 250px;
+            border: rgba(255,255,255,0.5) 2px solid;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: rgba(0,0,0,0.3);
+            margin-top: 65%;
+        }
+
+        .commonBtn {
+            font-size: 14px;
+            border-color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,1.0);
+        }
+
+        #first_question {
+            width: 200px;
+            font-size: 14px;
+            color: white;
+        }
+        #first_yes {
+            margin-left: 20px;
+        }
+        #first_no {
+        }
+
+        #yes_title {
+            width: 200px;
+            font-size: 14px;
+            color: white;
+            margin: 0 auto;
+        }
+        #yes_ok {
+            margin-left: 5px;
+        }
+        #yes_return {
+            margin: 0 auto;
+        }
+
+        #no_title {
+            width: 200px;
+            font-size: 14px;
+            color: white;
+            margin-left: 10px;
+        }
+        #no_input {
+            margin-left: 10px;
+            font-size: 30px;
+            width: 200px;
+        }
+        #no_return {
+            margin-left: 10px;
+        }
+
+        .imgCT {
+            display: inline-block;
+            margin-left: 20px;
+            overflow: visible;
+        }
+        .commonImg {
+            width:100px;
+            height:100px
+        }
+
+        #bottomCT {
+             position: fixed;
+             bottom: 15px;
+            width: 100%;
+            height: 30px;
+         }
+        #bottomText1 {
+            margin: 0 auto;
+            width: 320px;
+            text-align: center;
+            font-size: 14px;
+            color: rgba(0,0,0,0.2);
+        }
+
+        #bottomWish {
+            margin: 0 auto;
+            width: 220px;
+            text-align: center;
+            font-size: 14px;
+            color: rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="firstCT">
+    <div class="innerCT">
+    <p id="first_question">这次换成花束，但其实是一只猫</p>
+    <button class="commonBtn" id="first_yes">花:></button>
+    <button class="commonBtn" id="first_no">猫:)</button>
+    </div>
+</div>
+<div id="yesCT">
+    <div class="innerCT">
+        <div class="imgCT">
+            <img class="commonImg" src="./imgs/yes41_1.png">
+            <img class="commonImg" src="./imgs/yes41_2.png">
+        </div>
+        <p id="yes_title">幸福是每次捧着花想着要送你时</p>
+        <!--<button class="commonBtn" id="yes_ok"></button>-->
+        <button class="commonBtn" id="yes_return">返回</button>
+    </div>
+</div>
+<div id="noCT">
+    <div class="innerCT">
+        <div class="imgCT">
+            <img class="commonImg" src="./imgs/no41_1.png">
+            <img class="commonImg" src="./imgs/no41_3.png">
+        </div>
+        <p id="no_title">猫爱吃鱼，鱼多的地方去吗？</p>
+        <input id="no_input">
+        <button class="commonBtn" id="no_return">返回</button>
+    </div>
+</div>
+<!--controls="controls"-->
+<div id="songCT">
+    <audio id="zjlsong" controls="controls"  loop="loop" class="audiosong">
+        <source src="music/ycq_mzzd.mp3" type="audio/mpeg" />
+    </audio>
+</div>
+
+<div id="bottomCT">
+    <p id="bottomText1">愚人节快乐 傻子才信今天上班</p>
+    <p id="bottomWish">空的</p>
+</div>
+
+
+</body>
+
+<script>
+    // 音乐
+    var zjlAudio = document.getElementById("zjlsong");
+    zjlAudio.volume = 0.5;
+
+    setTimeout(function() {
+        zjlAudio.load();
+        zjlAudio.play();
+    }, 1000);
+</script>
+
+
+<script>
+    var def = {
+        state: {
+            first:  1,
+            yes:    2,
+            no:     3
+        }
+    };
+    var global = {
+        curState: def.state.first,
+
+    };
+
+    // 刷新界面
+    function UpdateUI() {
+        $('#firstCT').css('display', (global.curState == def.state.first ? 'block' : 'none'));
+        $('#yesCT').css('display', (global.curState == def.state.yes ? 'block' : 'none'));
+        $('#noCT').css('display', (global.curState == def.state.no ? 'block' : 'none'));
+
+        if (global.curState == def.state.first) {
+
+        } else if (global.curState == def.state.yes) {
+
+        } else if (global.curState == def.state.no) {
+
+        }
+    }
+
+
+    UpdateUI();
+
+
+    // 监听各个点击
+    $('#first_yes').on('click', function() {
+        global.curState = def.state.yes;
+        UpdateUI();
+    });
+    $('#first_no').on('click', function() {
+        global.curState = def.state.no;
+        UpdateUI();
+    });
+    $('#yes_return').on('click', function() {
+        global.curState = def.state.first;
+        UpdateUI();
+    });
+    $('#no_return').on('click', function() {
+        global.curState = def.state.first;
+        UpdateUI();
+    });
+
+    var curSending = false;
+    $('#no_input').bind('input propertychange', function() {
+        if (!curSending) {
+            curSending = true;
+
+
+            setTimeout(function() {
+                curSending = false;
+                var curVal = $('#no_input').val();
+                SetBtmWish(curVal);
+                makeAWish(curVal)
+
+            }, 3000);
+        }
+    });
+
+    function SetBtmWish(val) {
+        $('#bottomWish').html("你小声的说: " + val + '');
+    }
+
+    // wish
+    function getAWish() {
+        $.ajax({
+            type: 'GET',
+            url: '../getwish',
+            data: { },
+            dataType: 'json',
+            timeout: 500,
+            success: function(data){
+                SetBtmWish(data.wish);
+            },
+            error: function(xhr, type){
+//                alert('Ajax error!')
+            }
+        })
+    }
+
+    function makeAWish(wish) {
+        $.ajax({
+            type: 'GET',
+            url: '../setwish',
+            data: { wish: wish },
+            dataType: 'json',
+            timeout: 500,
+            success: function(data){
+            },
+            error: function(xhr, type){
+            }
+        })
+    }
+
+    getAWish();
+
+    // 定时修改bottomText
+    function CalcAndFmtLeftDate() {
+        var curDate = new Date();
+        var targetDate = new Date();
+        targetDate.setFullYear(2017, 3, 1);
+        targetDate.setHours(12, 30, 0, 0);
+
+        // 计算差距
+        var diff = (targetDate.getTime() - curDate.getTime()) / 1000;
+        if (diff <= 0 ) return "到了"
+
+        // 格式化
+        var diff_d = parseInt(diff / (3600*24));
+        diff -= diff_d * (3600*24);
+        var diff_h = parseInt(diff / (3600));
+        diff -= diff_h * (3600);
+        var diff_m = parseInt(diff / (60));
+        diff -= diff_m * (60);
+        var diff_s = parseInt(diff);
+
+        return diff_d + "天" + diff_h + "小时" + diff_m + "分" + diff_s + "秒";
+    }
+    function UpdateBtmText() {
+        var curText = CalcAndFmtLeftDate();
+        if (curText == "到了") {
+            $("#bottomText1").text("愚人节快乐 傻子才信今天上班");
+        } else {
+            $("#bottomText1").text("愚人节快乐 傻子才信今天上班 " + curText);
+        }
+    }
+
+    setInterval(function() {
+        UpdateBtmText();
+    }, 500)
+
+
+</script>
+
+</html>

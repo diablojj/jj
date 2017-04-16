@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>higb</title>
+    <meta charset="UTF-8">
+    <script src="./files/zepto.js"></script>
+
+    <style>
+        .audiosong {
+            display: none;
+        }
+
+        body {
+            background-image: url(./files/1.jpeg);
+            width: 100%;
+            height: 100%;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size: 100% auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="bkg">
+
+</div>
+<!--controls="controls"-->
+<audio id="zjlsong"  loop="loop" class="audiosong">
+    <source src="./files/tbkcdyy.mp3" type="audio/mpeg" />
+</audio>
+
+</body>
+
+<script>
+    // 音乐
+    var zjlAudio = document.getElementById("zjlsong");
+    zjlAudio.volume = 0.5;
+
+    setTimeout(function() {
+        zjlAudio.play();
+    }, 1000);
+</script>
+
+
+<script>
+    // 花瓶
+
+</script>
+
+</html>

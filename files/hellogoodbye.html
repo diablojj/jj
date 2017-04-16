@@ -191,7 +191,7 @@
 </div>
 
 <div id="bottomCT">
-    <p id="bottomText1">愚人节快乐 傻子才信今天上班</p>
+    <p id="bottomText1"></p>
     <p id="bottomWish">空的</p>
 </div>
 
@@ -216,7 +216,9 @@
             first:  1,
             yes:    2,
             no:     3
-        }
+        },
+        showCountdown : true,
+        fiexdText : "愚人节快乐 傻子才信今天上班"
     };
     var global = {
         curState: def.state.first,
@@ -317,7 +319,7 @@
     function CalcAndFmtLeftDate() {
         var curDate = new Date();
         var targetDate = new Date();
-        targetDate.setFullYear(2017, 3, 1);
+        targetDate.setFullYear(2017, 4-1, 28);
         targetDate.setHours(12, 30, 0, 0);
 
         // 计算差距
@@ -337,10 +339,15 @@
     }
     function UpdateBtmText() {
         var curText = CalcAndFmtLeftDate();
+        var fixedText = def.fiexdText;
         if (curText == "到了") {
-            $("#bottomText1").text("愚人节快乐 傻子才信今天上班");
+            $("#bottomText1").text(fixedText);
         } else {
-            $("#bottomText1").text("愚人节快乐 傻子才信今天上班 " + curText);
+            if (def.showCountdown) {
+                $("#bottomText1").text("" + curText);
+            } else {
+                $("#bottomText1").text("也许会选择永远相信美好");
+            }
         }
     }
 

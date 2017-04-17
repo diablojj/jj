@@ -85,7 +85,8 @@ app.get('/getallwish', function(req,res,next) {
 
 app.get('/', function(req,res,next) {
     //
-    res.render('hellogoodbye', {});
+    //res.render('hellogoodbye', {});
+    res.location("./files/hellogoodby.html");
 });
 
 //

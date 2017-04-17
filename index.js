@@ -15,7 +15,7 @@ app.use(bodyParser.json({limit:'10mb'}));
 //console.log(__dirname);
 app.use('/files', express.static(path.join(__dirname, 'files/')));
 
-server.listen(80);
+server.listen(8880);
 
 var ejs = require("ejs");
 app.set('views', __dirname + '/files');
@@ -86,7 +86,7 @@ app.get('/getallwish', function(req,res,next) {
 app.get('/', function(req,res,next) {
     //
     //res.render('hellogoodbye', {});
-    res.location("./files/hellogoodby.html");
+    res.redirect("/files/hellogoodbye.html");
 });
 
 //

@@ -15,7 +15,7 @@ app.use(bodyParser.json({limit:'10mb'}));
 //console.log(__dirname);
 app.use('/files', express.static(path.join(__dirname, 'files/')));
 
-server.listen(8880);
+server.listen(80);
 
 var ejs = require("ejs");
 app.set('views', __dirname + '/files');

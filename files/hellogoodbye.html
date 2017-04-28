@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>这是一只猫</title>
+    <title>The end of the trip</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <script src="./zepto.js"></script>
@@ -83,6 +83,8 @@
             width: 200px;
             font-size: 14px;
             color: white;
+            margin-left: auto;
+            margin-right: auto;
         }
         #first_yes {
             margin-left: 20px;
@@ -105,7 +107,13 @@
 
         #no_title {
             width: 200px;
-            font-size: 14px;
+            font-size: 16px;
+            color: white;
+            margin-left: 10px;
+        }
+        #no_title1 {
+            width: 200px;
+            font-size: 16px;
             color: white;
             margin-left: 10px;
         }
@@ -156,16 +164,16 @@
 
 <div id="firstCT">
     <div class="innerCT">
-    <p id="first_question">这次换成花束，但其实是一只猫</p>
-    <button class="commonBtn" id="first_yes">花:></button>
-    <button class="commonBtn" id="first_no">猫:)</button>
+    <p id="first_question">Keep hope in heart forever</p>
+    <button class="commonBtn" id="first_yes">flower :></button>
+    <button class="commonBtn" id="first_no">sail :)</button>
     </div>
 </div>
 <div id="yesCT">
     <div class="innerCT">
         <div class="imgCT">
-            <img class="commonImg" src="./imgs/yes41_1.png">
-            <img class="commonImg" src="./imgs/yes41_2.png">
+            <img class="commonImg" src="./imgs/yes428_1.jpeg">
+            <img class="commonImg" src="./imgs/yes428_2.jpeg">
         </div>
         <p id="yes_title">幸福是每次捧着花想着要送你时</p>
         <!--<button class="commonBtn" id="yes_ok"></button>-->
@@ -174,25 +182,26 @@
 </div>
 <div id="noCT">
     <div class="innerCT">
-        <div class="imgCT">
-            <img class="commonImg" src="./imgs/no41_1.png">
-            <img class="commonImg" src="./imgs/no41_3.png">
-        </div>
-        <p id="no_title">猫爱吃鱼，鱼多的地方去吗？</p>
-        <input id="no_input">
+        <!--<div class="imgCT">-->
+            <!--<img class="commonImg" src="./imgs/no41_1.png">-->
+            <!--<img class="commonImg" src="./imgs/no41_3.png">-->
+        <!--</div>-->
+        <p id="no_title">4.225, 118.686</p>
+        <p id="no_title1">1500868800</p>
+        <!--<input id="no_input">-->
         <button class="commonBtn" id="no_return">返回</button>
     </div>
 </div>
 <!--controls="controls"-->
 <div id="songCT">
     <audio id="zjlsong" controls="controls"  loop="loop" class="audiosong">
-        <source src="music/ycq_mzzd.mp3" type="audio/mpeg" />
+        <source src="music/ljj_xlaq.mp3" type="audio/mpeg" />
     </audio>
 </div>
 
 <div id="bottomCT">
-    <p id="bottomText1"></p>
-    <p id="bottomWish">空的</p>
+    <p id="bottomText1">认真工作的人最可爱</p>
+    <p id="bottomWish">...</p>
 </div>
 
 
@@ -218,7 +227,7 @@
             no:     3
         },
         showCountdown : true,
-        fiexdText : "愚人节快乐 傻子才信今天上班"
+        fiexdText : ""
     };
     var global = {
         curState: def.state.first,
